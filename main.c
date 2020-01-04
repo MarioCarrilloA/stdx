@@ -7,11 +7,24 @@ static struct option long_cmd_opts[] = {
 	{0, 0, 0, 0}
 };
 
+static const char version[] = "1.0.0";
+
 static const char help[] =
 	"Usage: stdx [-h] [--help] [-v] [--verbose]\n"
 	"Description:\n"
 	"  -h, --help           help page\n"
 	"  -v, --verbose        enable verbose\n\n";
+
+static const char info[] =
+	"Tool designed to get primary statistics from data sets.\n\n"
+	"Mario Alfredo Carrillo Arevalo - mario.carrillo.arevalo@gmail.com\n"
+	"January 2020\n";
+
+void show_info()
+{
+	printf("%s", info);
+	printf("%s\n", version);
+}
 
 int main(int argc, char **argv)
 {
