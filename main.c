@@ -1,6 +1,8 @@
 #include <getopt.h>
 #include <stdio.h>
 
+#include "add_set.h"
+
 static struct option long_cmd_opts[] = {
 	{"help",	no_argument,	0, 'h'},
 	{"verbose",	no_argument,	0, 'v'},
