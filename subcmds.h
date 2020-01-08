@@ -10,7 +10,7 @@ extern "C" {
 
 struct subcmd {
 	char *subcommand;
-	int (*subcmd_func)(int argc, char **argv);
+	void (*subcmd_func)(int argc, char **argv);
 };
 
 int preprocess_subcommand(char *args, struct subcmd subcommands[]);
