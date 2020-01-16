@@ -32,12 +32,14 @@ void show_info()
 
 static struct subcmd subcommands[] = {
 	{"add-set", &add_set},
-	{"show-info", &show_info}
+	{"show-info", &show_info},
+	{0, 0},
 };
 
 int main(int argc, char **argv)
 {
 	int cmd;
+	int ret = 0;
 	int opt_index = 0;
 	int verbose_enable = 0;
 
@@ -51,8 +53,9 @@ int main(int argc, char **argv)
 			verbose_enable = 1;
 			break;
 		case '\01':
-			printf("Entering\n");
-			preprocess_subcommand(optarg, subcommands);
+			ret = preprocess_subcommand(optarg, subcommands);
+			if (ret == 0)
+				printf("Valid subcommand\n");
 			break;
 		case '?':
 			printf("Error\n");
