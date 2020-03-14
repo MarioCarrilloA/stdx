@@ -7,11 +7,11 @@ int preprocess_subcommand(char *args, struct subcmd *subcommands)
 	int args_len;
 
 	args_len = strlen(args);
-	while (subcmds->subcommand != NULL) {
-		subcmd_len = strlen(subcmds->subcommand);
+	while (subcmds->subcommand_name != NULL) {
+		subcmd_len = strlen(subcmds->subcommand_name);
 		if (args_len == subcmd_len &&
-			strncmp(args, subcmds->subcommand,
-			strlen(subcmds->subcommand)) == 0) {
+			strncmp(args, subcmds->subcommand_name,
+			strlen(subcmds->subcommand_name)) == 0) {
 			return 0;
 		}
 		subcmds++;

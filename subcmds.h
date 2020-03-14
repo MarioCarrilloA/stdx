@@ -9,7 +9,7 @@ extern "C" {
 #endif
 
 struct subcmd {
-	char *subcommand;
+	char *subcommand_name;
 	void (*subcmd_func)(int argc, char **argv);
 };
 
